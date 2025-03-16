@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="chat-app">
+        <div class="sidebar">
+            <h2>Chats</h2>
+            <ul id="contact-list">
+                <li onclick="selectUser('Alice')">Alice</li>
+                <li onclick="selectUser('Bob')">Bob</li>
+                <li onclick="selectUser('Charlie')">Charlie</li>
+            </ul>
+        </div>
+
+        <div class="chat-window">
+            <div class="chat-header">
+                <h3 id="chat-title">Select a Contact</h3>
+            </div>
+            <div id="messages" class="chat-body"></div>
+            
+            <div class="chat-footer">
+                <input type="text" id="message" placeholder="Type a message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='chat.js') }}"></script>
+</body>
+</html>
